@@ -155,3 +155,27 @@ h1 {
     background-color: #f44336;
     color: white;
   }
+
+  @media (max-width: 1200px) {
+    .content {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .content {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .campo {
+        width: 150px;
+    }
+}
+
+@media (max-width: 699px) {
+    .content {
+        grid-template-columns: 1fr 1fr;
+    }
+    .campo {
+        width: 100px;
+    }
+}

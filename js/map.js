@@ -27,6 +27,26 @@ function positionSucces(pos) {
         marker.bindPopup(image + 'Revista:' + titleText + '<br> Local: ' + e.latlng.toString()).openPopup();
     }
     map.on('click', onMapClick);
+
+
+    const botaoAbrirMap = document.querySelector('.btn-map');
+    const botaoFecharMap = document.querySelector('[data-modal="fechar-map"]');
+    const containerModalMap = document.querySelector('[data-modal="map"]');
+
+    function abrirModalMap(event) {
+        event.preventDefault();
+        containerModalMap.classList.add('ativo');
+        map.invalidateSize();
+    }
+
+    function fecharModalMap() {
+        containerModalMap.classList.remove('ativo');
+    }
+
+    botaoAbrirMap.addEventListener('click', abrirModalMap);
+
+    botaoFecharMap.addEventListener('click', fecharModalMap);
+
 }
 
 function positionError(pos) {
@@ -36,19 +56,3 @@ function positionError(pos) {
 navigator.geolocation.getCurrentPosition(positionSucces, positionError);
 
 
-const botaoAbrirMap = document.querySelector('.btn-map');
-const botaoFecharMap = document.querySelector('[data-modal="fechar-map"]');
-const containerModalMap = document.querySelector('[data-modal="map"]');
-
-function abrirModalMap(event) {
-    event.preventDefault();
-    containerModalMap.classList.add('ativo');
-}
-
-function fecharModalMap() {
-    containerModalMap.classList.remove('ativo');
-}
-
-botaoAbrirMap.addEventListener('click', abrirModalMap);
-
-botaoFecharMap.addEventListener('click', fecharModalMap);

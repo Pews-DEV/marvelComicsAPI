@@ -1,13 +1,14 @@
+// pegando o json e passando os dados
 function getComics(dados) {
+    //verificando o retorno
     console.log(dados["data"]["results"]);
-
     if (dados["data"]["results"].length < 1) {
         pesquisaComic('');
         alert('Nenhuma COMIC encontrada, digite o nome corretamente!')
     }
 
+    // registrando e passando os dados
     const divComics = document.querySelector('.comics');
-
     dados.data.results.forEach((element) => {
         const srcImg = element.thumbnail.path + '.' + element.thumbnail.extension;
         const comicName = element.title;
@@ -17,12 +18,15 @@ function getComics(dados) {
     });
 }
 
+// criando as divs das comics no corpo do site
 function creatDivComics(srcImg, comicName, divToAppend, comicCod) {
+    // criando os elementos
     const divPai = document.createElement('div');
     const textTittle = document.createElement('h1');
     const img = document.createElement('img');
     const codComic = document.createElement('p');
 
+    // adicionando os dados nos elementos
     codComic.textContent = comicCod;
     textTittle.textContent = comicName;
     img.src = srcImg;
@@ -31,16 +35,20 @@ function creatDivComics(srcImg, comicName, divToAppend, comicCod) {
     textTittle.id = codComic.textContent;
     codComic.classList.add('codComic');
 
+    // adicionando os elementos a div principal 
+    // depois adicionando a div ao corpo do site
     divPai.appendChild(img);
     divPai.appendChild(textTittle);
     divPai.appendChild(codComic);
     divToAppend.appendChild(divPai);
 
+    // adicionando uma classe e um id à div principal
     divPai.classList.add('formatting');
     divPai.id = 'comics';
 
 }
 
+// pegando o json e passando os dados da comic selecionada
 function getInfoComics(dados) {
     console.log(dados["data"]["results"]);
 
@@ -70,6 +78,7 @@ function getInfoComics(dados) {
     });
 }
 
+// criando e adicionando os elementos a serem exibidos no modal
 function creatDivInfoComics(srcImg, comicName, comicCod, comicDesc, creators, divToAppend) {
     const divImg = document.createElement('div');
     const divInfo = document.createElement('div');

@@ -1,7 +1,11 @@
+// criando e configurando os eventos do botão "MORE"
+
+// capturando o botão
 var moreBtn = document.getElementById('form-btn');
 var campo = document.getElementById('campo');
 let pulo = 0;
 
+// capturando o evento submit e fazendo a pesquisa
 moreBtn.addEventListener('submit', function (e) {
     pulo += 50;
     console.log(pulo);
@@ -10,6 +14,5 @@ moreBtn.addEventListener('submit', function (e) {
     } else {
         pesquisaComic(campo.value, 50, pulo);
     }
-    // impede o envio do form
     e.preventDefault();
 });

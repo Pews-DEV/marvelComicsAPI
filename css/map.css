@@ -1,0 +1,56 @@
+#map { 
+    height: 250px;
+    width: 600px; 
+}
+
+.modal-map {
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-map.ativo {
+    display: flex;
+}
+
+.map-container {
+    background: white;
+    padding: 20px;
+    border: 10px solid #202020;
+    box-shadow: 0 0 0 1px white;
+    position: relative;
+}
+
+@keyframes modal-map {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.ativo.modal-map {
+    animation: modal-map 0.3s forwards;
+}
+
+.fechar-map {
+    width: 30px;
+    height: 30px;
+    border: 4px solid white;
+    top: -25px;
+    right: -25px;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}

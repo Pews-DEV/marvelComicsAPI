@@ -1,0 +1,157 @@
+/*Resets*/
+
+body,h1,h2,p,ul,li,a {
+    margin: 0px;
+    padding: 0px;
+    font-weight: normal;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*Geral*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.estrutura {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "content"
+      "footer";
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+  /*Header*/
+
+.header {
+    grid-area: header;
+    background: #202020;
+    padding: 10px 4em;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+.header a {
+    color: #fff;
+    max-width: 120px;
+}
+  
+.header a:hover {
+    color: #747491;
+}
+  
+.logo {
+    max-width: 120px;
+}
+
+/*Pesquisa*/
+
+.btn {
+    background-color: #202020; /* Green */
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border: 2px solid #f44336;
+    border-radius: 3px;
+    transition-duration: 0.4s;
+}
+
+.btn:hover {
+    background-color: #f44336; /* Green */
+    color: white;
+}
+
+.campo {
+    border: none;
+    border-bottom: 2px solid red;
+    background-color: #202020;
+    color: white;
+    width: 200px;
+    height: 22px;
+    outline: none;
+}
+
+/*Content*/
+
+.content {
+    grid-area: content;
+    margin: 0px auto;
+    padding: 30px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+/*Comics*/
+
+.formatting {
+    max-width: 224px;
+    text-align: center;
+}
+
+.formatting img {
+    margin-bottom: 15px;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.5);
+    transition: transform .5s ease;
+}
+
+.formatting img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.formatting h1:hover, .formatting p:hover {
+    cursor: pointer;
+}
+
+/*Footer*/
+
+.footer {
+    grid-area: footer;
+    background: #202020;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    text-align: center;
+}
+
+.more-btn {
+    width: 150px;
+    height: 50px;
+    background-color: #202020; 
+    color: white; 
+    border: 2px solid #f44336;
+    transition: 0.3s;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  
+  .more-btn:hover {
+    background-color: #f44336;
+    color: white;
+  }

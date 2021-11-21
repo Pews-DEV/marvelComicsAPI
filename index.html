@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HQ's Marvel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+
+</head>
+
+<body>
+    <div class="estrutura">
+        <!--Header-->
+        <header class="header">
+            <a href="index.html"><img class="logo" src="./img/marvel-logo.png" alt=""></a>
+            <form id="formulario">
+                <input type="text" id="campo" class="campo" placeholder="Pesquisar Comic...">
+                <input type="submit" value="pesquisar" class="btn">
+            </form>
+        </header>
+
+        <!--Comics-->
+        <main class="content comics" id="content">
+
+        </main>
+
+        <!--Footer-->
+        <footer class="footer">
+            <form id="form-btn">
+                <input type="submit" value="MORE" class="more-btn">
+            </form>
+            <p></p>
+        </footer>
+    </div>
+
+    <section class="modal-container" data-modal="container">
+        <div class="modal">
+            <button class="fechar" data-modal="fechar">X</button>
+            <div class="info-comics" id="info-comics">
+            </div>
+            <a href="#" class="btn-map">Selecionar Endereço<img src="img/map-icon.png" alt=""></a>
+        </div>
+    </section>
+
+    <section class="modal-map" data-modal="map">
+        <div class="map-container">
+            <button class="fechar-map" data-modal="fechar-map">X</button>
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="js/md5.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/request.js"></script>
+    <script src="js/parseData.js"> </script>
+    <script src="js/map.js"></script>
+    <script src="js/moreButton.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/modal.js"></script>
+
+</body>
+
+</html>
